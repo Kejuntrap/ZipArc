@@ -132,8 +132,7 @@ public class main {
                 accumSize+=CENTRALDIRECTORYHEADER_SIZE + l.get(i).path.length();
             }
             DebugLog("CentralDirectory end");
-
-            //
+            //セントラルディレクトリヘッダの完成
 
             // エンドヘッダの作成
             DebugLog("Endheader begin");
@@ -141,24 +140,12 @@ public class main {
             fos.write(po);
             DebugLog("Endheader end");
             // エンドヘッダの作成　完
-
-
             fos.close();
             DebugLog("END");
 
         }catch (NullPointerException e){    // 存在がないなら終了
             e.printStackTrace();
         }
-
-
-
-
-
-
-
-
-
-
     }
 
     static byte[] makeLocalfileheader(Eleminfo e) throws IOException {      // ローカルファイルヘッダの作成
